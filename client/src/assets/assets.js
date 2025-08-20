@@ -50,6 +50,16 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    title: "Personal Financial Tracker",
+    description:
+      "Built a personal financial tracker using MERN stack. Users can add expenses/incomes, track financials, and manage transactions. Features a user-friendly interface with React.js, data management with MongoDB, and backend API with Express.js/Node.js for efficient financial tracking.",
+
+    technologies: ["React", "Node.js", "Express", "MongoDB"],
+    image: "/PFT.png",
+    link: "https://personal-financial-t.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Real Time Chat Application",
     description:
       "A full-stack web application that allows users to communicate in real-time, featuring user authentication, message history, and a responsive design.",
@@ -63,17 +73,19 @@ export const projects = [
       "alot of Libraries",
     ],
     image: "/Chat.png",
+    link: "https://chat-app-nu-eight-19.vercel.app/login",
   },
   {
-    id: 2,
+    id: 3,
     title: "AI Powered Code Reviewer",
     description:
       "An AI-powered code review tool that analyzes code quality, suggests improvements, and integrates with popular version control systems.",
     technologies: ["React", "Express", "MongoDB", "google-gemini-API"],
     image: "/AI.png",
+    link: "https://code-reviewer-kappa-seven.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Weather Dashboard",
     description:
       "A weather dashboard that provides real-time weather updates, forecasts, and location-based information using a third-party API.",

@@ -47,10 +47,16 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex space-x-4">
-                    <button className="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer whitespace-nowrap !rounded-button">
-                      <i className="fas fa-external-link-alt mr-2"></i>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer whitespace-nowrap !rounded-button"
+                    >
                       Live Demo
-                    </button>
+                      <i className="fas fa-external-link-alt ml-2"></i>
+                    </a>
+
                     <button className="text-gray-600 flex hover:text-gray-800 font-semibold cursor-pointer whitespace-nowrap !rounded-button">
                       <i className="fab fa-github mr-2 mt-1.5">
                         <FaCode />
