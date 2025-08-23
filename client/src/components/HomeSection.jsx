@@ -1,5 +1,7 @@
-import React from "react";
-const scrollToSection = (sectionId = string) => {
+import BlurText from "../assets/HeaderAnimation";
+import { useState, useEffect } from "react";
+
+const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -7,6 +9,13 @@ const scrollToSection = (sectionId = string) => {
 };
 
 const HomeSection = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div>
       <section
@@ -30,10 +39,23 @@ const HomeSection = () => {
                   opacity: Math.max(0, 1 - scrollY * 0.001),
                 }}
               >
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Full Stack
-                  <span className="block text-blue-600">Developer</span>
-                </h1>
+                <div className="flex text-5xl lg:text-6xl font-bold leading-tight gap-4">
+                  <BlurText
+                    text="Full Stack"
+                    delay={150}
+                    animateBy="words"
+                    direction="top"
+                    className="text-gray-900 inline "
+                  />{" "}
+                  <BlurText
+                    text="Developer"
+                    delay={300}
+                    animateBy="words"
+                    direction="top"
+                    className="text-blue-600 inline "
+                  />
+                </div>
+
                 <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
                   Crafting exceptional digital experiences with modern
                   technologies. Passionate about creating scalable solutions

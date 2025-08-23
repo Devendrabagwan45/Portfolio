@@ -27,11 +27,13 @@ const About = () => {
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center space-x-2 text-gray-700">
                     <i className="fas fa-map-marker-alt text-blue-600"></i>
-                    <span className="text-blue-600">Devendra Bagwan</span>
+                    <span className="text-blue-600 font-bold text-2xl">
+                      Devendra Bagwan
+                    </span>
                   </div>
                   <div className="flex items-center space-x-2 text-gray-700">
                     <i className="fas fa-envelope text-blue-600"></i>
-                    <span>Final Year Student</span>
+                    <span className="font-bold ">Final Year Student</span>
                   </div>
                 </div>
               </div>

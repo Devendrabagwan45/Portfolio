@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "./App.css";
 import ExperienceTimeline from "./components/ExperienceTimeLine";
 import About from "./components/About";
 
@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Header from "./components/Header";
 import HomeSection from "./components/HomeSection";
 import { Route, Router } from "react-router-dom";
+import ClickSpark from "./assets/ClickAnimation";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -46,19 +47,27 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header activeSection={activeSection} />
+      <ClickSpark
+        sparkColor="#111"
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        <Header activeSection={activeSection} />
 
-      <HomeSection />
+        <HomeSection />
 
-      <About />
+        <About />
 
-      <Skills />
+        <Skills />
 
-      <ExperienceTimeline />
+        <ExperienceTimeline />
 
-      <Projects />
+        <Projects />
 
-      <Contact />
+        <Contact />
+      </ClickSpark>
 
       <style>{`
         .!rounded-button {
@@ -78,3 +87,16 @@ const App = () => {
 };
 
 export default App;
+
+//for my purpose
+//image trail
+//circular gallery
+//splash corsor = hang kar raha
+// buble menu
+//fluid glass
+//spotlight card
+//prism container good
+//dark viel for chat app
+//particals
+//galaxy good
+//squares for background

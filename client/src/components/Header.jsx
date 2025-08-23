@@ -1,6 +1,7 @@
-import React from "react";
+import Magnet from "../assets/MagnetAnimation";
+import SplitText from "../assets/NavAnimation";
 
-const scrollToSection = (sectionId = string) => {
+const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -8,21 +9,24 @@ const scrollToSection = (sectionId = string) => {
 };
 
 const Header = ({ activeSection }) => {
+  const navigationItems = [
+    "home",
+    "about",
+    "skills",
+    "experience",
+    "projects",
+    "contact",
+  ];
+
   return (
     <div>
+      <div className="cursor"></div>
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             <div className="text-2xl font-bold text-gray-900">Portfolio</div>
             <div className="hidden md:flex space-x-8">
-              {[
-                "home",
-                "about",
-                "skills",
-                "experience",
-                "projects",
-                "contact",
-              ].map((item) => (
+              {navigationItems.map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -32,7 +36,19 @@ const Header = ({ activeSection }) => {
                       : "text-gray-600 hover:text-blue-600"
                   }`}
                 >
-                  {item}
+                  <Magnet padding={50} disabled={false} magnetStrength={50}>
+                    <SplitText
+                      text={item}
+                      splitType="chars"
+                      delay={30}
+                      duration={0.4}
+                      from={{ opacity: 0, y: 15 }}
+                      to={{ opacity: 1, y: 0 }}
+                      ease="power2.out"
+                      triggerOnLoad={true}
+                      className="text-sm font-medium"
+                    />
+                  </Magnet>
                 </button>
               ))}
             </div>
