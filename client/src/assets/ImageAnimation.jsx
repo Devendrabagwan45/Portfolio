@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 
 import "./imageAnimation.css";
@@ -1094,6 +1094,7 @@ const variantMap = {
 
 export default function ImageTrail({ items = [], variant = 1 }) {
   const containerRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -1102,8 +1103,22 @@ export default function ImageTrail({ items = [], variant = 1 }) {
     new Cls(containerRef.current);
   }, [variant, items]);
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <div className="content" ref={containerRef}>
+    <div
+      className="content"
+      ref={containerRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {!isHovered && <div className="hover-text">Hover Me</div>}
       {items.map((url, i) => (
         <div className="content__img" key={i}>
           <div

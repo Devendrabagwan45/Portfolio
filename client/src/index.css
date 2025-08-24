@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+.gradient-border {
+  border: 8px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, #999, #4ecdc4, #45b7d1, #96ceb4) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}

@@ -22,7 +22,7 @@ const About = () => {
                   technologies, and building scalable applications that deliver
                   exceptional user experiences. When I am not coding, you can
                   find me exploring new technologies, contributing to
-                  open-source projects, or mentoring aspiring developers.
+                  open-source projects.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center space-x-2 text-gray-700">
@@ -39,8 +39,8 @@ const About = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="relative">
-                <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+              <div className="relative ">
+                <div className="w-80 h-80 rounded-full overflow-hidden gradient-border shadow-2xl">
                   <img
                     src="/devendra.PNG"
                     alt="Profile"

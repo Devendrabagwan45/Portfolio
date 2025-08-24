@@ -23,7 +23,7 @@ const Projects = () => {
                 key={project.id}
                 className="bg-white border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 rounded"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden bg-blue-50">
                   <ImageTrail
                     items={
                       project.images

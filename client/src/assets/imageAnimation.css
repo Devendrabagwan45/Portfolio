@@ -29,3 +29,17 @@
   top: calc(-1 * 20px / 2);
   left: calc(-1 * 20px / 2);
 }
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #5e5b5b;
+  font-size: 28px;
+  font-weight: 800;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  padding: 12px 20px;
+}
