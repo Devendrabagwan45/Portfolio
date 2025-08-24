@@ -3,7 +3,7 @@ const experiences = [
     id: 1,
     title: "Mern Stack Developer",
     company: "Proxenix",
-    // location: "San Francisco, CA",
+
     duration: "April - June 2025",
     year: "2025",
     responsibilities: [
@@ -19,7 +19,7 @@ const experiences = [
     id: 2,
     title: "Frontend Developer",
     company: "UnizzTexh",
-    // location: "New York, NY",
+
     duration: "November 2024",
     year: "2024",
     responsibilities: [
@@ -55,7 +55,9 @@ export const projects = [
       "Built a personal financial tracker using MERN stack. Users can add expenses/incomes, track financials, and manage transactions. Features a user-friendly interface with React.js, data management with MongoDB, and backend API with Express.js/Node.js for efficient financial tracking.",
 
     technologies: ["React", "Node.js", "Express", "MongoDB"],
-    image: "/PFT.png",
+
+    images: ["/PFT.png", "/PFT1.png", "/PFT2.png", "/PFT3.png", "/PFT4.png"],
+
     link: "https://personal-financial-t.vercel.app/",
   },
   {
@@ -72,7 +74,7 @@ export const projects = [
       "socket.io",
       "alot of Libraries",
     ],
-    image: "/Chat.png",
+    images: ["/Chat.png", "/Chat1.png", "/Chat2.png", "/Chat3.png"],
     link: "https://chat-app-nu-eight-19.vercel.app/login",
   },
   {
@@ -81,7 +83,7 @@ export const projects = [
     description:
       "An AI-powered code review tool that analyzes code quality, suggests improvements, and integrates with popular version control systems.",
     technologies: ["React", "Express", "MongoDB", "google-gemini-API"],
-    image: "/AI.png",
+    images: ["/AI.png", "/AI1.png", "/AI2.png"],
     link: "https://code-reviewer-kappa-seven.vercel.app/",
   },
   {

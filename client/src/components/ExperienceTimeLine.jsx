@@ -1,4 +1,5 @@
 import experiences from "../assets/assets";
+import SpotlightCard from "../assets/CardAnimation";
 
 const ExperienceTimeline = () => (
   <section id="experience" className="py-20 bg-gray-50">
@@ -14,7 +15,12 @@ const ExperienceTimeline = () => (
       </div>
       <div className="relative">
         <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-blue-200"></div>
-        {experiences.map((exp, index) => (
+      </div>
+      {experiences.map((exp, index) => (
+        <SpotlightCard
+          className="custom-spotlight-card"
+          spotlightColor="rgba(0, 229, 255, 0.2)"
+        >
           <div
             key={exp.id}
             className={`relative flex items-center mb-16 ${
@@ -96,8 +102,8 @@ const ExperienceTimeline = () => (
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        </SpotlightCard>
+      ))}
     </div>
   </section>
 );

@@ -87,16 +87,3 @@ const App = () => {
 };
 
 export default App;
-
-//for my purpose
-//image trail
-//circular gallery
-//splash corsor = hang kar raha
-// buble menu
-//fluid glass
-//spotlight card
-//prism container good
-//dark viel for chat app
-//particals
-//galaxy good
-//squares for background

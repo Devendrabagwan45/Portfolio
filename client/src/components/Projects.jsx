@@ -1,10 +1,11 @@
 import { projects } from "../assets/assets";
 import { FaCode } from "react-icons/fa";
+import ImageTrail from "../assets/ImageAnimation";
 
 const Projects = () => {
   return (
     <div>
-      <section id="projects" className="py-20 bg-white">
+      <section id="projects" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -20,13 +21,23 @@ const Projects = () => {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 !rounded-button"
+                className="bg-white border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 rounded"
               >
                 <div className="h-48 overflow-hidden">
+                  <ImageTrail
+                    items={
+                      project.images
+                        ? project.images
+                        : project.image
+                        ? [project.image]
+                        : ["/vite.svg"] // Fallback if no images are defined
+                    }
+                    variant={1}
+                  />
                   <img
-                    src={project.image}
+                    src={project.image || project.images?.[0] || "/vite.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 rounded image"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300 rounded"
                   />
                 </div>
                 <div className="p-6">
@@ -40,7 +51,7 @@ const Projects = () => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 text-sm whitespace-nowrap !rounded-button"
+                        className="bg-gray-100 text-gray-700 px-3 py-1 text-sm whitespace-nowrap rounded"
                       >
                         {tech}
                       </span>
@@ -51,16 +62,18 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer whitespace-nowrap !rounded-button"
+                      className="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer whitespace-nowrap rounded"
+                      aria-label={`Live demo of ${project.title}`}
                     >
                       Live Demo
                       <i className="fas fa-external-link-alt ml-2"></i>
                     </a>
 
-                    <button className="text-gray-600 flex hover:text-gray-800 font-semibold cursor-pointer whitespace-nowrap !rounded-button">
-                      <i className="fab fa-github mr-2 mt-1.5">
-                        <FaCode />
-                      </i>
+                    <button
+                      className="text-gray-600 flex hover:text-gray-800 font-semibold cursor-pointer whitespace-nowrap rounded"
+                      aria-label={`View code for ${project.title}`}
+                    >
+                      <FaCode className="mr-2 mt-1.5" />
                       Code
                     </button>
                   </div>

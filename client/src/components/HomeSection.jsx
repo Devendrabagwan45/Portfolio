@@ -57,6 +57,7 @@ const HomeSection = () => {
                 </div>
 
                 <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
+                  {" "}
                   Crafting exceptional digital experiences with modern
                   technologies. Passionate about creating scalable solutions
                   that make a difference.
